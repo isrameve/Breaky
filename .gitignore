@@ -1,0 +1,30 @@
+# Archivos de Node.js
+node_modules/
+package-lock.json
+
+# Archivos de compilación de React
+client/build/
+client/dist/
+
+# Archivos de compilación de Express.js (si aplica)
+server/build/
+server/dist/
+
+# Archivos de entorno
+.env
+client/.env
+server/.env
+
+# Archivos de registro
+*.log
+
+# Archivos de IDE
+.idea/
+*.swp
+
+# Otros archivos y directorios
+.DS_Store
+Thumbs.db
+
+# Directorio de datos de MongoDB local (si aplica)
+data/
