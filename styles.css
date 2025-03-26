@@ -1,0 +1,107 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.textCentred {
+  text-align: center;
+}
+
+.bgcgray {
+  background-color: #5e5e5e;
+}
+
+.m-top10 {
+  margin-top: 10px;
+}
+
+body {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.userConfig {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logoAndUser {
+  display: flex;
+  width: 50%;
+}
+.config {
+  width: 50%;
+  text-align: right;
+}
+
+.centerCard {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto 0 auto;
+  width: 80%;
+}
+
+.formSection {
+  margin: 10px auto 0 auto;
+  padding: 20px 0;
+  width: 80%;
+}
+
+.formSection h2 {
+  margin: 0 20px;
+}
+
+.formElements {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 20% 0;
+}
+
+.formElements label {
+  margin: 10px 0 5px;
+}
+
+.formElements input {
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.formElements input::placeholder {
+  padding: 50px;
+}
+
+.buttonForm {
+  margin: 10px auto 0 auto;
+  width: 25%;
+}
+
+.activePause {
+  margin: 10px auto 0 auto;
+  width: 80%;
+}
+
+.timerButtonActiveWorking {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* Dentro del input poner el texto con Pseudoelemento ::placeholder */

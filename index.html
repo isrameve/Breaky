@@ -4,33 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../src/styles/App.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Breaky</title>
   </head>
   <body>
-    <head>
-      <div class="user">
-        <img src="" alt="logoBreaky" />
+    <header style="display: none" class="userConfig">
+      <div class="logoAndUser">
+        <img src="" alt="logo de Breaky" />
         <h2>¡Hola Israel!</h2>
       </div>
-      <div>
+      <div class="config">
         <div><img src="" alt="Engranaje de configuración" /></div>
       </div>
-    </head>
+    </header>
 
     <h1>Hagámos una rápida configuración</h1>
 
-    <section class="formSection">
+    <section class="formSection textCentred bgcgray m-top10">
+      <h2>
+        Con estos datos tendrémos la información necesaria para usar la app
+      </h2>
       <form action="">
-        <h2>
-          Con estos datos tendrémos la información necesaria para usar la app
-        </h2>
-        <div>
+        <div class="formElements">
+          <!-- Dentro del input poner el texto con Pseudoelemento ::placeholder -->
           <label for="name">Tu Nombre:</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" placeholder="Tu Nombre" />
 
           <label for="age">Tu Edad:</label>
-          <input type="number" name="age" id="age" />
+          <input type="number" name="age" id="age" placeholder="Tu Edad" />
 
           <label for="time-working">¿Cada cuanto será tu pausa activa?</label>
           <select name="time-working" id="time-working">
@@ -49,18 +50,24 @@
           </select>
         </div>
 
-        <input type="submit" value="Listo" />
+        <input
+          id="form-button"
+          class="buttonForm"
+          type="button"
+          value="Listo"
+        />
       </form>
     </section>
 
-    <section class="start">
-      <button type="button">Comenzar</button>
+    <section class="start textCentred m-top10">
+      <button id="start-button" type="button">Comenzar</button>
     </section>
 
-    <section class="activeWorking">
+    <section class="activeWorking textCentred bgcgray m-top10 centerCard">
       <div>
         <div class="timer">
-          <h2>00:00</h2>
+          <!-- Shows the timer -->
+          <h2 id="timer"></h2>
           <h3>Hasta la pausa activa</h3>
         </div>
         <div class="buttons">
@@ -73,19 +80,14 @@
           </div>
         </div>
       </div>
-
-      <div class="totalTime">
-        <h3>Tiempo de total de enfoque</h3>
-        <h3>00:00</h3>
-      </div>
     </section>
 
-    <section class="activePause">
+    <section class="activePause textCentred bgcgray m-top10">
       <div class="tutorial">
         <img src="" alt="Ejercicios para la pausa activa" />
       </div>
 
-      <div>
+      <div class="timerButtonActiveWorking">
         <div>
           <h2>00:00</h2>
           <h3>De pausa activa</h3>
@@ -95,11 +97,15 @@
           <button type="button">Terminar</button>
         </div>
       </div>
+    </section>
 
+    <section class="totalTime textCentred m-top10">
       <div class="totalTime">
         <h3>Tiempo de total de enfoque</h3>
         <h3>00:00</h3>
       </div>
     </section>
+
+    <script src="main.js"></script>
   </body>
 </html>
