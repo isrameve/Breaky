@@ -18,45 +18,47 @@
       </div>
     </header>
 
-    <h1>Hagámos una rápida configuración</h1>
+    <section class="formSection">
+      <h1>Hagámos una rápida configuración</h1>
 
-    <section class="formSection textCentred bgcgray m-top10">
-      <h2>
-        Con estos datos tendrémos la información necesaria para usar la app
-      </h2>
-      <form action="">
-        <div class="formElements">
-          <!-- Dentro del input poner el texto con Pseudoelemento ::placeholder -->
-          <label for="name">Tu Nombre:</label>
-          <input type="text" name="name" id="name" placeholder="Tu Nombre" />
+      <article class="formCard textCentred bgcgray m-top10">
+        <h2>
+          Con estos datos tendrémos la información necesaria para usar la app
+        </h2>
+        <form action="">
+          <div class="formElements">
+            <!-- Dentro del input poner el texto con Pseudoelemento ::placeholder -->
+            <label for="name">Tu Nombre:</label>
+            <input type="text" name="name" id="name" placeholder="Tu Nombre" />
 
-          <label for="age">Tu Edad:</label>
-          <input type="number" name="age" id="age" placeholder="Tu Edad" />
+            <label for="age">Tu Edad:</label>
+            <input type="number" name="age" id="age" placeholder="Tu Edad" />
 
-          <label for="time-working">¿Cada cuanto será tu pausa activa?</label>
-          <select name="time-working" id="time-working">
-            <option value="select">Selecciona una opción</option>
-            <option value="30">30 munitos</option>
-            <option value="45">45 munitos</option>
-            <option value="60">60 munitos</option>
-          </select>
+            <label for="time-working">¿Cada cuanto será tu pausa activa?</label>
+            <select name="time-working" id="time-working">
+              <option value="select">Selecciona una opción</option>
+              <option value="30">30 munitos</option>
+              <option value="45">45 munitos</option>
+              <option value="60">60 munitos</option>
+            </select>
 
-          <label for="time-rest">¿Cada cuanto será tu pausa activa?</label>
-          <select name="time-rest" id="time-rest">
-            <option value="select">Selecciona una opción</option>
-            <option value="5">5 munitos</option>
-            <option value="10">10 munitos</option>
-            <option value="15">15 munitos</option>
-          </select>
-        </div>
+            <label for="time-rest">¿Cada cuanto será tu pausa activa?</label>
+            <select name="time-rest" id="time-rest">
+              <option value="select">Selecciona una opción</option>
+              <option value="5">5 munitos</option>
+              <option value="10">10 munitos</option>
+              <option value="15">15 munitos</option>
+            </select>
+          </div>
 
-        <input
-          id="form-button"
-          class="buttonForm"
-          type="button"
-          value="Listo"
-        />
-      </form>
+          <input
+            id="form-button"
+            class="buttonForm"
+            type="button"
+            value="Listo"
+          />
+        </form>
+      </article>
     </section>
 
     <section class="start textCentred m-top10">
