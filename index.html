@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+    </style>
+
     <title>Breaky</title>
   </head>
   <body>
@@ -18,7 +23,7 @@
       </div>
     </header>
 
-    <section class="formSection">
+    <section class="formSection fullHeight">
       <h1>Hagámos una rápida configuración</h1>
 
       <article class="formCard textCentred bgcgray m-top10">
@@ -61,44 +66,50 @@
       </article>
     </section>
 
-    <section class="start textCentred m-top10">
-      <button id="start-button" type="button">Comenzar</button>
+    <section class="startSection fullHeight">
+      <article class="start textCentred m-top10">
+        <button id="start-button" type="button">Comenzar</button>
+      </article>
     </section>
 
-    <section class="activeWorking textCentred bgcgray m-top10 centerCard">
-      <div>
-        <div class="timer">
-          <!-- Shows the timer -->
-          <h2 id="timer"></h2>
-          <h3>Hasta la pausa activa</h3>
-        </div>
-        <div class="buttons">
-          <div class="onPaused">
-            <button type="button">Continuar</button>
+    <section class="activeWorkingContainer fullHeight">
+      <article class="activeWorking textCentred bgcgray m-top10 centerCard">
+        <div>
+          <div class="timer">
+            <!-- Shows the timer -->
+            <h2 id="timer">00:00</h2>
+            <h3>Hasta la pausa activa</h3>
           </div>
-          <div class="onActive">
-            <button type="button">Pausar</button>
+          <div class="activeWorkingButtons">
+            <div class="onPaused">
+              <button type="button">Continuar</button>
+            </div>
+            <div class="onActiveButtons">
+              <button type="button">Pausar</button>
+              <button type="button">Terminar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="activePauseContainer fullHeight">
+      <article class="activePause textCentred bgcgray m-top10">
+        <div class="tutorial">
+          <img src="" alt="Ejercicios para la pausa activa" />
+        </div>
+
+        <div class="timerButtonActiveWorking">
+          <div>
+            <h2>00:00</h2>
+            <h3>De pausa activa</h3>
+          </div>
+
+          <div>
             <button type="button">Terminar</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="activePause textCentred bgcgray m-top10">
-      <div class="tutorial">
-        <img src="" alt="Ejercicios para la pausa activa" />
-      </div>
-
-      <div class="timerButtonActiveWorking">
-        <div>
-          <h2>00:00</h2>
-          <h3>De pausa activa</h3>
-        </div>
-
-        <div>
-          <button type="button">Terminar</button>
-        </div>
-      </div>
+      </article>
     </section>
 
     <section class="totalTime textCentred m-top10">
