@@ -13,7 +13,7 @@
     <title>Breaky</title>
   </head>
   <body>
-    <header style="display: none" class="userConfig">
+    <nav style="display: none" class="userConfig">
       <div class="logoAndUser">
         <img src="" alt="logo de Breaky" />
         <h2>¡Hola Israel!</h2>
@@ -21,38 +21,38 @@
       <div class="config">
         <div><img src="" alt="Engranaje de configuración" /></div>
       </div>
-    </header>
+    </nav>
 
     <section class="formSection fullHeight">
       <h1>Hagámos una rápida configuración</h1>
 
-      <article class="formCard textCentred bgcgray m-top10">
+      <article class="formCard textCentred bgcgray m-top10 br-10">
         <h2>
           Con estos datos tendrémos la información necesaria para usar la app
         </h2>
         <form action="">
           <div class="formElements">
             <!-- Dentro del input poner el texto con Pseudoelemento ::placeholder -->
-            <label for="name">Tu Nombre:</label>
+            <!-- <label for="name">Tu Nombre:</label> -->
             <input type="text" name="name" id="name" placeholder="Tu Nombre" />
 
-            <label for="age">Tu Edad:</label>
+            <!-- <label for="age">Tu Edad:</label> -->
             <input type="number" name="age" id="age" placeholder="Tu Edad" />
 
             <label for="time-working">¿Cada cuanto será tu pausa activa?</label>
             <select name="time-working" id="time-working">
-              <option value="select">Selecciona una opción</option>
-              <option value="30">30 munitos</option>
-              <option value="45">45 munitos</option>
-              <option value="60">60 munitos</option>
+              <option value="select">00:00</option>
+              <option value="30">30 minutos</option>
+              <option value="45">45 minutos</option>
+              <option value="60">60 minutos</option>
             </select>
 
-            <label for="time-rest">¿Cada cuanto será tu pausa activa?</label>
+            <label for="time-rest">¿Cuanto durará tu pausa activa?</label>
             <select name="time-rest" id="time-rest">
-              <option value="select">Selecciona una opción</option>
-              <option value="5">5 munitos</option>
-              <option value="10">10 munitos</option>
-              <option value="15">15 munitos</option>
+              <option value="select">00:00</option>
+              <option value="5">5 minutos</option>
+              <option value="10">10 minutos</option>
+              <option value="15">15 minutos</option>
             </select>
           </div>
 
@@ -67,22 +67,26 @@
     </section>
 
     <section class="startSection fullHeight">
-      <article class="start textCentred m-top10">
-        <button id="start-button" type="button">Comenzar</button>
+      <article class="start textCentred m-top10 br-10">
+        <button class="startButton" id="start-button" type="button">
+          Comenzar
+        </button>
       </article>
     </section>
 
     <section class="activeWorkingContainer fullHeight">
-      <article class="activeWorking textCentred bgcgray m-top10 centerCard">
-        <div>
-          <div class="timer">
+      <article
+        class="activeWorking textCentred bgcgray m-top10 centerCard br-10"
+      >
+        <div class="activeButtonTimer">
+          <div class="timerWorking">
             <!-- Shows the timer -->
             <h2 id="timer">00:00</h2>
             <h3>Hasta la pausa activa</h3>
           </div>
           <div class="activeWorkingButtons">
             <div class="onPaused">
-              <button type="button">Continuar</button>
+              <button style="display: none" type="button">Continuar</button>
             </div>
             <div class="onActiveButtons">
               <button type="button">Pausar</button>
@@ -94,19 +98,19 @@
     </section>
 
     <section class="activePauseContainer fullHeight">
-      <article class="activePause textCentred bgcgray m-top10">
+      <article class="activePause textCentred bgcgray m-top10 centerCard br-10">
         <div class="tutorial">
           <img src="" alt="Ejercicios para la pausa activa" />
         </div>
 
-        <div class="timerButtonActiveWorking">
-          <div>
+        <div class="timerButtonActivePause">
+          <div class="timerPauseActive">
             <h2>00:00</h2>
             <h3>De pausa activa</h3>
           </div>
 
           <div>
-            <button type="button">Terminar</button>
+            <button class="pauseActiveButton" type="button">Terminar</button>
           </div>
         </div>
       </article>
