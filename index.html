@@ -23,7 +23,7 @@
       </div>
     </nav>
 
-    <section class="formSection fullHeight">
+    <section id="form-section" class="formSection fullHeight">
       <h1>Hagámos una rápida configuración</h1>
 
       <article class="formCard textCentred bgcgray m-top10 br-10">
@@ -32,11 +32,8 @@
         </h2>
         <form action="">
           <div class="formElements">
-            <!-- Dentro del input poner el texto con Pseudoelemento ::placeholder -->
-            <!-- <label for="name">Tu Nombre:</label> -->
             <input type="text" name="name" id="name" placeholder="Tu Nombre" />
 
-            <!-- <label for="age">Tu Edad:</label> -->
             <input type="number" name="age" id="age" placeholder="Tu Edad" />
 
             <label for="time-working">¿Cada cuanto será tu pausa activa?</label>
@@ -66,7 +63,11 @@
       </article>
     </section>
 
-    <section class="startSection fullHeight">
+    <section
+      style="display: none"
+      id="start-button-section"
+      class="startSection fullHeight"
+    >
       <article class="start textCentred m-top10 br-10">
         <button class="startButton" id="start-button" type="button">
           Comenzar
@@ -74,7 +75,11 @@
       </article>
     </section>
 
-    <section class="activeWorkingContainer fullHeight">
+    <section
+      style="display: none"
+      id="active-working-container"
+      class="activeWorkingContainer fullHeight"
+    >
       <article
         class="activeWorking textCentred bgcgray m-top10 centerCard br-10"
       >
@@ -85,19 +90,23 @@
             <h3>Hasta la pausa activa</h3>
           </div>
           <div class="activeWorkingButtons">
-            <div class="onPaused">
-              <button style="display: none" type="button">Continuar</button>
+            <div style="display: none" id="on-paused" class="onPaused">
+              <button id="continue-button" type="button">Continuar</button>
             </div>
-            <div class="onActiveButtons">
-              <button type="button">Pausar</button>
-              <button type="button">Terminar</button>
+            <div id="on-active-buttons" class="onActiveButtons">
+              <button id="pause-button" type="button">Pausar</button>
+              <button id="stop-button" type="button">Terminar</button>
             </div>
           </div>
         </div>
       </article>
     </section>
 
-    <section class="activePauseContainer fullHeight">
+    <section
+      style="display: none"
+      id="active-pause-container"
+      class="activePauseContainer fullHeight"
+    >
       <article class="activePause textCentred bgcgray m-top10 centerCard br-10">
         <div class="tutorial">
           <img src="" alt="Ejercicios para la pausa activa" />
@@ -116,7 +125,7 @@
       </article>
     </section>
 
-    <section class="totalTime textCentred m-top10">
+    <section style="display: none" class="totalTime textCentred m-top10">
       <div class="totalTime">
         <h3>Tiempo de total de enfoque</h3>
         <h3>00:00</h3>
