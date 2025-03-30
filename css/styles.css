@@ -13,6 +13,8 @@ html {
 }
 
 body {
+  position: relative;
+
   background-color: #2c2c2c;
 
   font-family: "Itim", cursive;
@@ -55,22 +57,42 @@ button {
 }
 
 .fullHeight {
-  height: 90vh;
+  height: 100vh;
+}
 
 .userConfig {
   display: flex;
   justify-content: space-around;
+
+  position: absolute;
+
+  width: 100%;
+  padding: 8px 8px 0;
 }
 
 .logoAndUser {
   display: flex;
+  align-items: center;
 
   width: 50%;
 }
+
+.logoAndUser img {
+  width: 48px;
+}
+
+.logoAndUser h2 {
+  margin-left: 16px;
+}
+
 .config {
   width: 50%;
 
   text-align: right;
+}
+
+.config img {
+  width: 48px;
 }
 
 .centerCard {
