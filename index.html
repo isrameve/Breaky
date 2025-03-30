@@ -13,15 +13,17 @@
     <title>Breaky</title>
   </head>
   <body>
-    <nav style="display: none" class="userConfig">
+    <!-- <div  nav-container"> -->
+    <nav id="nav" style="display: none" class="userConfig">
       <div class="logoAndUser">
         <img src="" alt="logo de Breaky" />
-        <h2>¡Hola Israel!</h2>
+        <h2>¡Hola <span id="user-name"></span>!</h2>
       </div>
       <div class="config">
         <div><img src="" alt="Engranaje de configuración" /></div>
       </div>
     </nav>
+    <!-- </div> -->
 
     <section id="form-section" class="formSection fullHeight">
       <h1>Hagámos una rápida configuración</h1>
@@ -68,7 +70,7 @@
       id="start-button-section"
       class="startSection fullHeight"
     >
-      <article class="start textCentred m-top10 br-10">
+      <article class="start textCentred br-10">
         <button class="startButton" id="start-button" type="button">
           Comenzar
         </button>
@@ -114,7 +116,7 @@
 
         <div class="timerButtonActivePause">
           <div class="timerPauseActive">
-            <h2>00:00</h2>
+            <h2 id="active-pause-timer">00:00</h2>
             <h3>De pausa activa</h3>
           </div>
 

@@ -55,8 +55,7 @@ button {
 }
 
 .fullHeight {
-  height: 100vh;
-}
+  height: 90vh;
 
 .userConfig {
   display: flex;

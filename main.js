@@ -1,25 +1,39 @@
 let timerInterval;
 let timeLeft = 0; // In seconds
-
-let user;
+let activePauseTimeLeft = 0; // In seconds
 
 let timerStatus;
 
-// Form elements
+let user;
+
+class User {
+  constructor(name, age, timeWorking, timeRest) {
+    this.name = name;
+    this.age = age;
+    this.timeWorking = timeWorking;
+    this.timeRest = timeRest;
+  }
+}
+
+// Form Personal elements
 const name = document.getElementById("name");
 const age = document.getElementById("age");
+
+// Form Time elements
 const timeWorking = document.getElementById("time-working");
 const timeRest = document.getElementById("time-rest");
 
 // Sections
 const formSection = document.getElementById("form-section");
+const nav = document.getElementById("nav");
+const showNameUserNav = document.getElementById("user-name");
 const startButtonSection = document.getElementById("start-button-section");
 const activeWorkingContainer = document.getElementById(
   "active-working-container"
 );
 const onPausedSection = document.getElementById("on-paused");
 const onActiveButtons = document.getElementById("on-active-buttons");
-const actiivePauseContainer = document.getElementById("active-pause-container");
+const activePauseContainer = document.getElementById("active-pause-container");
 
 // Buttons
 const formButton = document.getElementById("form-button");
@@ -31,12 +45,24 @@ formButton.addEventListener("click", () => {
   // show start button section
   startButtonSection.style.display = "block";
   takeInformation();
+  showNav();
 });
+
+// Show user name in nav
+function showNav() {
+  showNameUserNav.textContent = user.name;
+  nav.style.display = "flex";
+}
 
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", () => {
   console.log("Start button clicked");
   timerStatus = "active";
+  console.log(timerStatus);
+
+  timeLeft = user.timeWorking;
+  activePauseTimeLeft = user.timeRest;
+
   // hidden start button section
   startButtonSection.style.display = "none";
   // show active working container
@@ -77,17 +103,10 @@ stopButton.addEventListener("click", () => {
   startButtonSection.style.display = "block";
 });
 
-class User {
-  constructor(name, age, timeWorking, timeRest) {
-    this.name = name;
-    this.age = age;
-    this.timeWorking = timeWorking;
-    this.timeRest = timeRest;
-  }
-}
-
 function takeInformation() {
   setTimer(parseInt(user.timeWorking)); // Establece el temporizador en segundos
+  setActivePauseTimer(parseInt(user.timeRest)); // Establece el temporizador de pausa activa en segundos
+
   // startTimer();
 }
 
@@ -100,6 +119,12 @@ function setTimer(timeInSeconds) {
   updateTimerDisplay();
 }
 
+function setActivePauseTimer(timeInSeconds) {
+  activePauseTimeLeft = timeInSeconds;
+
+  updateActivePauseTimerDisplay();
+}
+
 function startTimer() {
   timerInterval = setInterval(() => {
     if (timeLeft > 0) {
@@ -109,7 +134,24 @@ function startTimer() {
     } else {
       clearInterval(timerInterval);
       showNotification();
-      setTimer(timeWorking);
+      setTimer(user.timeWorking);
+    }
+  }, 1000);
+}
+
+function activePauseStartTimer() {
+  activePauseTimerInterval = setInterval(() => {
+    if (activePauseTimeLeft > 0) {
+      activePauseTimeLeft--;
+      updateActivePauseTimerDisplay();
+    } else {
+      clearInterval(activePauseTimerInterval);
+      showNotification();
+      setActivePauseTimer(user.timeRest);
+      // hidden active pause container
+      activePauseContainer.style.display = "none";
+      // show start button section
+      startButtonSection.style.display = "block";
     }
   }, 1000);
 }
@@ -138,6 +180,15 @@ function updateTimerDisplay() {
   activePause();
 }
 
+function updateActivePauseTimerDisplay() {
+  const minutes = Math.floor(activePauseTimeLeft / 60);
+  const seconds = activePauseTimeLeft % 60;
+  // Update the HTML with the new time
+  document.getElementById("active-pause-timer").textContent = `${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+}
+
 function activePause() {
   if (timerStatus === "active" && timeLeft === 0) {
     console.log("Active pause");
@@ -145,7 +196,11 @@ function activePause() {
     // hidden active working container
     activeWorkingContainer.style.display = "none";
     // show active pause container
-    actiivePauseContainer.style.display = "flex";
+    activePauseContainer.style.display = "flex";
+
+    // Start the active pause timer
+    activePauseStartTimer();
+    updateActivePauseTimerDisplay();
   }
 }
 
