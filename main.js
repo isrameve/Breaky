@@ -44,15 +44,18 @@ formButton.addEventListener("click", () => {
   formSection.style.display = "none";
   // show start button section
   startButtonSection.style.display = "block";
+
   takeInformation();
   showNav();
 });
 
-// Show user name in nav
-function showNav() {
-  showNameUserNav.textContent = user.name;
-  nav.style.display = "flex";
-}
+const configButton = document.getElementById("config");
+configButton.addEventListener("click", () => {
+  console.log("Config button clicked");
+  // show form section
+  formSection.style.display = "block";
+  nav.style.display = "none";
+});
 
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", () => {
@@ -108,6 +111,12 @@ function takeInformation() {
   setActivePauseTimer(parseInt(user.timeRest)); // Establece el temporizador de pausa activa en segundos
 
   // startTimer();
+}
+
+// Show user name in nav
+function showNav() {
+  showNameUserNav.textContent = user.name;
+  nav.style.display = "flex";
 }
 
 function setTimer(timeInSeconds) {
@@ -206,4 +215,9 @@ function activePause() {
 
 function showNotification() {
   alert("Time's up!");
+}
+
+function alertSound() {
+  const audio = new Audio("sound.mp3");
+  audio.play();
 }
